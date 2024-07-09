@@ -1,3 +1,3 @@
 <?php
 
-define('BASE', dirname(__FILE__,2));
+define('BASE', dirname(__FILE__,3));
