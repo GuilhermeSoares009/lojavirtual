@@ -1,6 +1,6 @@
 <?php
 
-function load() {
+function load(array $data) {
     $inc = $_GET['inc'] ?? 'home';
 
     $path = BASE.'/app/views/'.$inc.'.php';
@@ -8,6 +8,8 @@ function load() {
     if(!file_exists($path)){
         throw new Exception("View {$inc} does not exist");
     }
+
+    extract($data);
 
     require $path;
 }

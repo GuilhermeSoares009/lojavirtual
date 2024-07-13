@@ -38,7 +38,7 @@
     
     
     <div class="maincontent-area">
-        <?php load(); ?>        
+        <?php load($data); ?>        
     </div> <!-- End main content area -->
     
     <div class="footer-top-area">
