@@ -9,6 +9,9 @@ return match ($inc) {
     'contact' => function() {
         var_dump('contact');
     },
+    'send-contact' => function() {
+        var_dump('send-contact  ');
+    },
     default => function() {
         var_dump('Not found');
     }
