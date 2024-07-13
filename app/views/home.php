@@ -19,3 +19,10 @@
     <?php require BASE . '/app/views/partials/latest.php' ?>
 </div>
 
+<div class="brands-area">
+    <?php require BASE . '/app/views/partials/brands.php' ?>
+</div> <!-- End brands area -->
+
+<div class="product-widget-area">
+    <?php require BASE . '/app/views/partials/widget.php' ?>
+</div> <!-- End product widget area -->

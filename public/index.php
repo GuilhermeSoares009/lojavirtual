@@ -9,4 +9,8 @@ require '../app/functions/load.php';
 $controller = require '../app/functions/controllers.php';
 $controller();
 
-require '../app/views/master.php';
+try {
+    require '../app/views/master.php';
+} catch (\Throwable $th) {
+    echo $th->getMessage();
+}
