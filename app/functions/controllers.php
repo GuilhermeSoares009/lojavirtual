@@ -5,7 +5,7 @@ $inc = $_GET['inc'] ?? 'home';
 return match ($inc) {
     'home' => function() {
         where('id', '>', 2);
-        get('products');
+        $data = first('products');
     },
     'contact' => function() {
         var_dump('contact');

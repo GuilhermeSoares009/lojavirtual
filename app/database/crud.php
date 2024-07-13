@@ -25,6 +25,7 @@ function create(String $table, array $data)
 function where(string $field, string $operator, string $value)
 {
     global $where;
+    global $binds;
     $where[]  = "{$field} {$operator} :{$field}";
     $binds[$field] = $value;
 }
@@ -49,9 +50,11 @@ function dump()
     global $limit;
     global $order;
 
-    $query = !empty($where) ? " where " . implode('', $where) : '';
+    $query = !empty($where) ? "where " . implode('', $where) : '';
     $query .= $limit ?? '';
     $query .= $order ?? '';
+
+    return $query;
 }
 
 function get(string $table, string $fields = '*')
@@ -60,7 +63,6 @@ function get(string $table, string $fields = '*')
         global $binds;
         $connection = getConnection();
         $query = "select {$fields} from {$table} " . dump();
-        var_dump($query);
         $prepare = $connection->prepare($query);
         $prepare->execute($binds ?? []);
         return $prepare->fetchAll();
@@ -68,6 +70,22 @@ function get(string $table, string $fields = '*')
         echo $e->getMessage();
     }
 }
+
+function first(string $table, string $fields = '*')
+{
+    try {
+        global $binds;
+        $connection = getConnection();
+        $query = "select {$fields} from {$table} " . dump();
+        var_dump($query);
+        $prepare = $connection->prepare($query);
+        $prepare->execute($binds ?? []);
+        return $prepare->fetchObject();
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
 
 function update()
 {
