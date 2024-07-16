@@ -48,6 +48,8 @@
     <div class="footer-bottom-area">
         <?php require BASE.'/app/views/partials/bottom.php' ?>
     </div> <!-- End footer bottom area -->
+
+    <script src="app.js"></script>
    
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>

@@ -15,6 +15,9 @@ return match ($inc) {
 
         return ['product' => $product];
     },
+    'get-products' => function () {
+        echo json_encode('get products');
+    },
     'contact' => function() {
         var_dump('contact');
     },

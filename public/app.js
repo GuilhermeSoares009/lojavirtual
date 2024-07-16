@@ -16,10 +16,13 @@ async function getProducts() {
     const {
       data
     } = await _services_http__WEBPACK_IMPORTED_MODULE_0__["default"].get('?inc=get-products');
+    /* eslint-disable */
+    console.log(...oo_oo(`199044704_5_4_5_21_4`, data));
   } catch (error) {
-    /* eslint-disable */console.log(...oo_oo(`278713231_6_4_6_22_4`, error));
+    /* eslint-disable */console.log(...oo_oo(`199044704_7_4_7_22_4`, error));
   }
 }
+getProducts();
 /* istanbul ignore next */ /* c8 ignore start */ /* eslint-disable */
 ;
 function oo_cm() {
