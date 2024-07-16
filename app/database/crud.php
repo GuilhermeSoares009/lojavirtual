@@ -77,7 +77,6 @@ function first(string $table, string $fields = '*')
         global $binds;
         $connection = getConnection();
         $query = "select {$fields} from {$table} " . dump();
-        var_dump($query);
         $prepare = $connection->prepare($query);
         $prepare->execute($binds ?? []);
         return $prepare->fetchObject();
