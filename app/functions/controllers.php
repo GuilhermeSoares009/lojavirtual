@@ -1,6 +1,6 @@
 <?php
 
-$inc = $_GET['inc'] ?? 'home';
+$inc = $_REQUEST['inc'] ?? 'home';
 
 return match ($inc) {
     'home' => function() {
