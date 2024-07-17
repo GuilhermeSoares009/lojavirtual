@@ -1,4 +1,5 @@
 <?php
+require BASE.'/app/functions/cart.php';
 
 $inc = $_REQUEST['inc'] ?? 'home';
 
@@ -16,7 +17,7 @@ return match ($inc) {
         return ['product' => $product];
     },
     'get-products' => function () {
-        echo json_encode('get products');
+        echo json_encode(getCart());
     },
     'contact' => function() {
         var_dump('contact');

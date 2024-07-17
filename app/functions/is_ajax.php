@@ -1,5 +1,5 @@
 <?php 
 
 function is_ajax(){
-    return isset($_SERVER['X-Resquested-With']) and $_SERVER['X-Requested-With'] === 'XMLHttpRequest';
+    return isset($_SERVER['HTTP_X_REQUESTED_WITH']) and $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
 }
