@@ -5,6 +5,7 @@ $inc = $_REQUEST['inc'] ?? 'home';
 
 return match ($inc) {
     'home' => function() {
+        // session_destroy();
         $data = get('products');
         return ['products' => $data , 'name' => 'guilherme'];
     },

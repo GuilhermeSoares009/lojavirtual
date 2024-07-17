@@ -21,6 +21,5 @@ function getCart() {
     if (isset($_SESSION['cart'])){
         return $_SESSION['cart'];
     }
-
     return [];
 }

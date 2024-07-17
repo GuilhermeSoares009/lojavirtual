@@ -1,6 +1,13 @@
 import http from './services/http';
 
 const btns_add_to_cart = document.querySelectorAll('.add-to-cart-link');
+const cart_amount = document.querySelector('.cart-amunt');
+
+function totalProducts(data) {
+  for (const key in data) {
+    total += data[key]['qty'] * data[key]['subtotal'];
+  }
+}
 
 btns_add_to_cart.forEach(btn => {
   btn.addEventListener('click', async (event) => {
@@ -20,7 +27,7 @@ btns_add_to_cart.forEach(btn => {
 async function getProducts() {
   try {
     const {data} = await http.get('?inc=get-products');
-    console.log(data);
+    totalProducts(data);
   } catch (error) {
     console.log(error);
   }
