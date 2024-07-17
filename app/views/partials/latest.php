@@ -9,7 +9,7 @@
                             <div class="product-f-image">
                                 <img src="<?php echo ($product->img); ?>" alt="">
                                 <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    <a href="#" class="add-to-cart-link" data-id="<?php echo($product->id); ?>"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                     <a href="?inc=details&id=<?php echo $product->id; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                 </div>
                             </div>

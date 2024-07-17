@@ -19,6 +19,12 @@ return match ($inc) {
     'get-products' => function () {
         echo json_encode(getCart());
     },
+    'add-to-cart' => function () {
+        $product = json_decode(file_get_contents("php://input"));
+        addToCart($product->id);
+
+        echo json_encode(getCart());
+    },
     'contact' => function() {
         var_dump('contact');
     },
