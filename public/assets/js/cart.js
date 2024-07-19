@@ -27,7 +27,7 @@ btns_add_to_cart.forEach(btn => {
       event.preventDefault();
       const id = +btn.getAttribute('data-id');
       const {data} = await http.post('?inc=add-to-cart', {id});
-      console.log(data);
+      totalProducts(data);
     } catch (error) {
       console.log(error);
     }

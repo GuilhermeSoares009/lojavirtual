@@ -39,10 +39,9 @@ btns_add_to_cart.forEach(btn => {
       } = await _services_http__WEBPACK_IMPORTED_MODULE_0__["default"].post('?inc=add-to-cart', {
         id
       });
-      /* eslint-disable */
-      console.log(...oo_oo(`168099382_30_6_30_23_4`, data));
+      totalProducts(data);
     } catch (error) {
-      /* eslint-disable */console.log(...oo_oo(`168099382_32_6_32_24_4`, error));
+      /* eslint-disable */console.log(...oo_oo(`1680636268_32_6_32_24_4`, error));
     }
   });
 });
@@ -53,7 +52,7 @@ async function getProducts() {
     } = await _services_http__WEBPACK_IMPORTED_MODULE_0__["default"].get('?inc=get-products');
     totalProducts(data);
   } catch (error) {
-    /* eslint-disable */console.log(...oo_oo(`168099382_44_4_44_22_4`, error));
+    /* eslint-disable */console.log(...oo_oo(`1680636268_44_4_44_22_4`, error));
   }
 }
 getProducts();
