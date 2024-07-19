@@ -1,11 +1,17 @@
 import http from './services/http';
+import currency from './services/currency';
 
 const btns_add_to_cart = document.querySelectorAll('.add-to-cart-link');
 const cart_amount = document.querySelector('.cart-amunt');
 
 function totalProducts(data) {
+  let total = 0;
   for (const key in data) {
     total += data[key]['qty'] * data[key]['subtotal'];
+  }
+
+  if(cart_amount){
+    cart_amount.textContent = total === 0 ? currency(0) : currency(total);
   }
 }
 
