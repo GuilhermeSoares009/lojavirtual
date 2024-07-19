@@ -3,11 +3,17 @@ import currency from './services/currency';
 
 const btns_add_to_cart = document.querySelectorAll('.add-to-cart-link');
 const cart_amount = document.querySelector('.cart-amunt');
+const product_count = document.querySelector('.product-count');
 
 function totalProducts(data) {
   let total = 0;
   for (const key in data) {
     total += data[key]['qty'] * data[key]['subtotal'];
+  }
+
+  if(product_count){
+    const total_products_in_cart = Object.keys(data).length;
+    product_count.textContent = total_products_in_cart;
   }
 
   if(cart_amount){

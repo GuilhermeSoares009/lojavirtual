@@ -9,7 +9,7 @@
         <div class="col-sm-6">
             <div class="shopping-item">
                 <a href="cart.html">Cart - <span class="cart-amunt"></span> 
-                <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                <i class="fa fa-shopping-cart"></i> <span class="product-count"></span></a>
             </div>
         </div>
     </div>

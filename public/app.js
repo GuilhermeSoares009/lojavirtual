@@ -15,10 +15,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const btns_add_to_cart = document.querySelectorAll('.add-to-cart-link');
 const cart_amount = document.querySelector('.cart-amunt');
+const product_count = document.querySelector('.product-count');
 function totalProducts(data) {
   let total = 0;
   for (const key in data) {
     total += data[key]['qty'] * data[key]['subtotal'];
+  }
+  if (product_count) {
+    const total_products_in_cart = Object.keys(data).length;
+    product_count.textContent = total_products_in_cart;
   }
   if (cart_amount) {
     cart_amount.textContent = total === 0 ? (0,_services_currency__WEBPACK_IMPORTED_MODULE_1__["default"])(0) : (0,_services_currency__WEBPACK_IMPORTED_MODULE_1__["default"])(total);
@@ -35,9 +40,9 @@ btns_add_to_cart.forEach(btn => {
         id
       });
       /* eslint-disable */
-      console.log(...oo_oo(`36333832_24_6_24_23_4`, data));
+      console.log(...oo_oo(`168099382_30_6_30_23_4`, data));
     } catch (error) {
-      /* eslint-disable */console.log(...oo_oo(`36333832_26_6_26_24_4`, error));
+      /* eslint-disable */console.log(...oo_oo(`168099382_32_6_32_24_4`, error));
     }
   });
 });
@@ -48,7 +53,7 @@ async function getProducts() {
     } = await _services_http__WEBPACK_IMPORTED_MODULE_0__["default"].get('?inc=get-products');
     totalProducts(data);
   } catch (error) {
-    /* eslint-disable */console.log(...oo_oo(`36333832_38_4_38_22_4`, error));
+    /* eslint-disable */console.log(...oo_oo(`168099382_44_4_44_22_4`, error));
   }
 }
 getProducts();
