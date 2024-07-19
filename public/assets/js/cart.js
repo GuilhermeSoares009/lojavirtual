@@ -8,7 +8,7 @@ const product_count = document.querySelector('.product-count');
 function totalProducts(data) {
   let total = 0;
   for (const key in data) {
-    total += data[key]['qty'] * data[key]['subtotal'];
+    total+= data[key]['subtotal'];
   }
 
   if(product_count){

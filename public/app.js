@@ -19,7 +19,7 @@ const product_count = document.querySelector('.product-count');
 function totalProducts(data) {
   let total = 0;
   for (const key in data) {
-    total += data[key]['qty'] * data[key]['subtotal'];
+    total += data[key]['subtotal'];
   }
   if (product_count) {
     const total_products_in_cart = Object.keys(data).length;
@@ -41,7 +41,7 @@ btns_add_to_cart.forEach(btn => {
       });
       totalProducts(data);
     } catch (error) {
-      /* eslint-disable */console.log(...oo_oo(`1680636268_32_6_32_24_4`, error));
+      /* eslint-disable */console.log(...oo_oo(`1999168267_32_6_32_24_4`, error));
     }
   });
 });
@@ -52,7 +52,7 @@ async function getProducts() {
     } = await _services_http__WEBPACK_IMPORTED_MODULE_0__["default"].get('?inc=get-products');
     totalProducts(data);
   } catch (error) {
-    /* eslint-disable */console.log(...oo_oo(`1680636268_44_4_44_22_4`, error));
+    /* eslint-disable */console.log(...oo_oo(`1999168267_44_4_44_22_4`, error));
   }
 }
 getProducts();
