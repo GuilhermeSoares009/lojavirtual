@@ -1,15 +1,16 @@
 <?php
-require BASE.'/app/functions/cart.php';
+require BASE . '/app/functions/cart.php';
+require BASE . '/app/functions/mail.php';
 
 $inc = $_REQUEST['inc'] ?? 'home';
 
 return match ($inc) {
-    'home' => function() {
+    'home' => function () {
         // session_destroy();
         $data = get('products');
-        return ['products' => $data , 'title' => 'Home'];
+        return ['products' => $data, 'title' => 'Home'];
     },
-    'details' => function() {
+    'details' => function () {
         $id = strip_tags(($_GET['id']));
 
         where('id', '=', $id);
@@ -26,13 +27,22 @@ return match ($inc) {
 
         echo json_encode(getCart());
     },
-    'contact' => function() {
+    'contact' => function () {
         var_dump('contact');
     },
-    'send-contact' => function() {
-        var_dump('send-contact  ');
+    'send-contact' => function () {
+        $name = strip_tags($_POST['name']);
+        $email = strip_tags($_POST['email']);
+        $subject = strip_tags($_POST['subject']);
+        $message = strip_tags($_POST['message']);
+
+        $sent = send($email, 'guilherme.sousa009@hotmail.com', $name, $subject, $message);
+
+        if($sent){
+            var_dump('enviado com sucesso');
+        }
     },
-    default => function() {
+    default => function () {
         var_dump('Not found');
     }
 };
