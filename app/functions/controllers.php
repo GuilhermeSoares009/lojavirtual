@@ -1,6 +1,7 @@
 <?php
 require BASE . '/app/functions/cart.php';
 require BASE . '/app/functions/mail.php';
+require BASE . '/app/functions/redirect.php';
 
 $inc = $_REQUEST['inc'] ?? 'home';
 
@@ -39,8 +40,11 @@ return match ($inc) {
         $sent = send($email, 'guilherme.sousa009@hotmail.com', $name, $subject, $message);
 
         if($sent){
-            var_dump('enviado com sucesso');
+            setFlash('mail', 'Email enviado com sucesso', 'color:green');
+            return redirect('?inc=contact');
         }
+        setFlash('mail', 'Ocorreu um erro ao enviar e-mail','color:red');
+        return redirect('?inc=contact');
     },
     default => function () {
         var_dump('Not found');

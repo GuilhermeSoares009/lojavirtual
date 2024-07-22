@@ -1,5 +1,7 @@
 <h2>CONTACT</h2>
 
+<?php echo getFlash('mail'); ?>
+
 <form action="?inc=send-contact" method="post">
     <input type="text" name="name" value="Alexandre">
     <input type="email" name="email" value="guilherme.sousa009@hotmail.com">
