@@ -47,6 +47,5 @@ return match ($inc) {
         return redirect('?inc=contact');
     },
     default => function () {
-        var_dump('Not found');
     }
 };
