@@ -6,11 +6,7 @@ function load(array $data) {
     $path = BASE.'/app/views/'.$inc.'.php';
 
     if(!file_exists($path)){
-        if (ENVIRONMENT === 'development') {
-            var_dump("View {$inc} does not exist");
-        }else{
-            require BASE.'/app/views/404.php';
-        }
+        (ENVIRONMENT === 'development') ? var_dump("View {$inc} does not exist") : require BASE.'/app/views/404.php';
     }else{
         extract($data);
         require $path;
