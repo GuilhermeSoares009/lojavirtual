@@ -17,7 +17,7 @@ function totalProducts(data) {
   }
 
   if(cart_amount){
-    cart_amount.textContent = total === 0 ? currency(0) : currency(total);
+    cart_amount.textContent = currency(total);
   }
 }
 
