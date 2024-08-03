@@ -23,6 +23,10 @@ return match ($inc) {
     'login' => function(){
         return ['title' => 'Login'];
     },
+    'logout' => function(){
+       logout();
+       die();
+    },
     default => function () {
         var_dump('rooute not found');
     }
