@@ -26,6 +26,11 @@ return match ($inc) {
        logout();
        die();
     },
+    'cart' => function(){
+        $products = getCart();
+
+        return ['title' => 'Cart', 'products' => $products];
+    },
     default => function () {
         var_dump('rooute not found');
     }

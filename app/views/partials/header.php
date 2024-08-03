@@ -6,9 +6,9 @@
                     <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                     <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                    <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
+                    <li><a href="?inc=cart"><i class="fa fa-user"></i> My Cart</a></li>
                     <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                    <li><a href="/?inc=login"><i class="fa fa-user"></i> Login</a></li>
+                    <li><a href="?inc=login"><i class="fa fa-user"></i> Login</a></li>
                 </ul>
             </div>
         </div>
