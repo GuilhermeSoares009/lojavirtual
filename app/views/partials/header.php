@@ -23,7 +23,7 @@
                     <li class="dropdown dropdown-small">
                         Bem-vindo,
                         <?php  if(isAuth()):  ?>
-                            <?php  fullName();  ?> <a href="?inc=logout">Logout</a>
+                            <?php echo fullName();  ?> <a href="?inc=logout">Logout</a>
                         <?php  else:  ?>
                             Visitante
                         <?php  endif;  ?>

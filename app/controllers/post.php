@@ -1,4 +1,5 @@
 <?php
+require_once './app/database/crud.php';
 
 return match ($inc) {
     'add-to-cart' => function () {
