@@ -2,7 +2,6 @@
 
 return match ($inc) {
     'home' => function () {
-        // session_destroy();
         $data = get('products');
         return ['products' => $data, 'title' => 'Home'];
     },

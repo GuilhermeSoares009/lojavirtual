@@ -4,7 +4,8 @@ require_once './app/database/crud.php';
 return match ($inc) {
     'add-to-cart' => function () {
         $product = json_decode(file_get_contents("php://input"));
-        addToCart($product->id);
+
+        addToCart($product->id, $product->quantity);
 
         echo json_encode(getCart());
     },

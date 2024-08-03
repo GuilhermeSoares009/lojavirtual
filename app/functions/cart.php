@@ -1,6 +1,6 @@
 <?php
 
-function addToCart(int $productId)
+function addToCart(int $productId, int $quantity = 1)
 {
     if ( !isset($_SESSION['cart']) ) {
         $_SESSION['cart'] = [];
@@ -10,10 +10,10 @@ function addToCart(int $productId)
     $product = first('products', 'price');
 
     if (!isset($_SESSION['cart'][$productId])){
-        $_SESSION['cart'][$productId] = ['qty' => 1, 'subtotal' => $product->price];
+        $_SESSION['cart'][$productId] = ['qty' => $quantity, 'subtotal' => $product->price];
     }else{
         $qty = $_SESSION['cart'][$productId]['qty'];
-        $_SESSION['cart'][$productId] = ['qty' => $qty+=1, 'subtotal' => $product->price * $qty];
+        $_SESSION['cart'][$productId] = ['qty' => $qty+=$quantity, 'subtotal' => $product->price * $qty];
     }
 }
 

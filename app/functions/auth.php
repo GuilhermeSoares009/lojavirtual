@@ -20,6 +20,7 @@ function logout(){
     if(isAuth())
     {
         unset($_SESSION['user']);
+        session_destroy();
         return redirect('/');
     }
 }
