@@ -23,7 +23,26 @@ return match ($inc) {
         return redirect('?inc=contact');
     },
     'login' => function(){
-        var_dump('login');
+        $email = strip_tags($_POST['email']);
+        $password = strip_tags($_POST['password']);
+
+        where('email','=', $email);
+        $user = first('users');
+
+        if(!$user){
+            setFlash('login','Usuário ou senha inválidos');
+            return redirect('?inc=login');
+        }
+
+        if(!password_verify($password,$user->password)){
+            setFlash('login','Usuário ou senha inválido');
+            return redirect('?inc=login');
+        }
+
+        unset($user->password);
+        $_SESSION['user'] = $user;
+
+        return redirect('/');
     },
     default => function () {
     }
