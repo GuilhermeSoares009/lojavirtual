@@ -88,7 +88,7 @@
 
                                     <tr class="cart_item">
                                         <td class="product-remove">
-                                            <a title="Remove this item" class="remove" href="#">×</a>
+                                            <a title="Remove this item" data-id="<?php echo $product['id']; ?>"  class="remove" href="#">×</a>
                                         </td>
 
                                         <td class="product-thumbnail">
@@ -105,9 +105,9 @@
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-">
-                                                <input type="text" size="4" class="input-text qty text" title="Qty" value="<?php echo $product['qty']; ?>" min="0" step="1">
-                                                <input type="button" class="plus" value="+">
+                                                <input type="button" class="minus" value="-" data-id="<?php echo $product['id'];?>">
+                                                <input type="text" size="4" id="qty<?php echo $product['id']; ?>" class="input-text qty text" title="Qty" value="<?php echo $product['qty']; ?>" min="0" step="1">
+                                                <input type="button" class="plus" value="+" data-id="<?php echo $product['id'];?>">
                                             </div>
                                         </td>
 

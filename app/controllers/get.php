@@ -31,6 +31,12 @@ return match ($inc) {
 
         return ['title' => 'Cart', 'products' => $products];
     },
+    'cart-remove' => function () {
+
+        $id = strip_tags($_GET['id']);
+
+        removeFromCartint($id);
+    },
     default => function () {
         var_dump('rooute not found');
     }
